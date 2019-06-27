@@ -1,6 +1,7 @@
 package com.challenge.locationservice.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
 
 public class User {
 
@@ -19,9 +20,11 @@ public class User {
     @JsonProperty("ip_address")
     private String ipAddress;
 
+    @Getter
     @JsonProperty
     private double latitude;
 
+    @Getter
     @JsonProperty
     private double longitude;
 }

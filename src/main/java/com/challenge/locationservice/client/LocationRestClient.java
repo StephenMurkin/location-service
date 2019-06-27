@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import java.util.List;
+import java.util.Set;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
@@ -15,5 +15,8 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 public interface LocationRestClient {
 
     @GetMapping(path = "/city/{city}/users", consumes = APPLICATION_JSON_VALUE)
-    List<User> getUsersByCity(@PathVariable String city);
+    Set<User> getUsersByCity(@PathVariable String city);
+
+    @GetMapping(path = "/users", consumes = APPLICATION_JSON_VALUE)
+    Set<User> getUsers();
 }
